@@ -52,7 +52,7 @@ class Trainer():
         """set and train the pipeline"""
         # train the pipelined model
         self.set_pipeline()
-        self.pipeline.fit(X_train, y_train)
+        self.pipeline.fit(self.X, self.y)
 
 
     def evaluate(self, X_test, y_test):
@@ -82,5 +82,5 @@ if __name__ == "__main__":
     trainer.run()
 
     # evaluate
-    rmse = trainer.evaluate(X_train, y_train)
+    rmse = trainer.evaluate(X_test, y_test)
     print(rmse)
